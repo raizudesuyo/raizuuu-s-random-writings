@@ -10,7 +10,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <p>Welcome to my blog, if you got here because it is written on the resume I gave you, please don't tell anybody about it. Otherwise feel free to read about anything</p>
-    <p>It's currently empty but here are the content I've planned for this website</p>
+    <h3>Notes</h3>
+    <p><Link to="/why-is-this-website-is-made-using-gatsby">Why is this website written in Gatsby</Link> - It's actually made with Gatsby, it's not like I need to, I just want to!</p>
+    <h3>TODO:</h3>
     <ul>
       <li><b>[For students]</b> Here is the cheapest way to make a website for school projects</li>
       <li><b>[Ongoing for life]</b> My Journey to Japanese Fluency</li>
