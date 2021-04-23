@@ -37,12 +37,20 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.md', '.mdx'],
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout.tsx"),
+        }
       }
     },
-    
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
