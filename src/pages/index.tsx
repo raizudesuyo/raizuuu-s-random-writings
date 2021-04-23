@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { loremIpsum } from "lorem-ipsum"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,21 +9,23 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    <p>Welcome to my blog, if you got here because it is written on the resume I gave you, please don't tell anybody about it. Otherwise feel free to read about anything</p>
+    <p>It's currently empty but here are the content I've planned for this website</p>
+    <ul>
+      <li><b>[For students]</b> Here is the cheapest way to make a website for school projects</li>
+      <li><b>[Ongoing for life]</b> My Journey to Japanese Fluency</li>
+        <ul>
+          <li>
+            Isekai RPG Let's Play Series
+            <br/>
+            This is actually me playing a NES RPG in Japanese and doing the translation with the best of my abilities live streamed on twitch, I'll make a writeup here and maybe upload a whole video on youtube
+          </li>
+        </ul>
+        <li>Notes from a 1 of a hundred can't do anything productive introvert</li>
+        <li>From virgin to chad in front of a camera</li>
+    </ul>
+    <p>Everything is planned to have a video accompaniment, but I don't have time to make one as of yet</p>
+    <p>Now that I have uploaded this to the internet, nothing written here will probably get done</p>
   </Layout>
 )
 

@@ -7,10 +7,11 @@ html {
 }
 body {
   margin: 0;
+  background-color: #170B3B;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: #9388A2;
+  font-family: sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -52,6 +53,7 @@ template {
 }
 a {
   background-color: transparent;
+  color: #9388A2;
   -webkit-text-decoration-skip: objects;
 }
 a:active,

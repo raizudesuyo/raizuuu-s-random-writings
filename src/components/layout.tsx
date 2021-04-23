@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import { SmallNote } from "./StyledText/SmallNote"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,9 +40,10 @@ const Layout = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          <SmallNote>© {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://www.gatsbyjs.com">Gatsby</a> </SmallNote>
+          <SmallNote>If the design of this website hurts your eyes, send suggestions to <a style={{ color: '#9388A2' }} href="">this email</a>. I am a software engineer focused on the backend for a reason</SmallNote>
         </footer>
       </div>
     </>
