@@ -1,8 +1,8 @@
 ---
-path: /why-is-this-blog-made-using-gatsby
 title: Why is this blog made using gatsby?
-date: 2019-04-26
-published: false
+written date: 2021-04-23
+last modified date: 2021-04-23
+published: true
 todos: rewrite, too many becauses
 tags: [Web Development, Essay, Personal Opinion]
 ---
