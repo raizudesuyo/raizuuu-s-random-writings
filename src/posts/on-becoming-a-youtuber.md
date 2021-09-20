@@ -25,4 +25,4 @@ Should I? Or Will I?
 
 ## Problems
 
-But what happens when you put a very awkward guy in front of a camera. He'll be more awkward and he'll say a lot of uuuuuhhhh and ummmm. Which totally sucks (I think, I mean, I'm talking about myself). But when I watch PewDiePie's first videos, MrBeast first videos, and Atty Libayan's first videos, it always start very awkward. Maybe I should make my youtube debut and make one video a month about something. Maybe I should start with my crypto research and not plan too much ahead. I believe I should at least try, yeah?
+But what happens when you put a very awkward guy in front of a camera. He'll be more awkward and he'll say a lot of uuuuuhhhh and ummmm. Which totally sucks (When I'm talking about myself). But when I watch PewDiePie's first videos, MrBeast first videos, and Atty Libayan's first videos, it always start very awkward. Maybe I should make my youtube debut and make one video a month about something. Maybe I should start with my crypto research and not plan too much ahead. I believe I should at least try, yeah?

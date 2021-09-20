@@ -8,10 +8,11 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import GlobalFonts from '../fonts/fonts';
 
 import Header from "./header"
-import "./layout.css"
-import { SmallNote } from "./StyledText/SmallNote"
+import { GlobalStyle } from "../styled/Global";
+import { SmallNote, SubTitle } from "../styled/Shared";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,21 +27,28 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalFonts />
+      <GlobalStyle />
+      
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          maxWidth: 1200,
+          backgroundColor: "#FFC247"
         }}
       >
-        <main>{children}</main>
-        <footer
+        <main
           style={{
-            marginTop: `2rem`,
+            paddingLeft: '15pt',
+            paddingRight: '15pt',
+            paddingBottom: '20pt'
           }}
         >
-          <SmallNote>If the design of this website hurts your eyes, send suggestions to <a style={{ color: '#9388A2' }} href="mailto:raizuuus.random.writings@gmail.com">this email</a>. I am a software engineer focused on the backend for a reason</SmallNote>
+          {children}
+        </main>
+        <footer>
+          <SmallNote><a href="/">Back to Main Page</a></SmallNote>
         </footer>
       </div>
     </>

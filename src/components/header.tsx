@@ -1,18 +1,18 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { SmallNote } from './StyledText/SmallNote'
+import { SmallNote, Title, TitleContainer } from "../styled/Shared"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <div
+    <TitleContainer
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: 1200,
+        padding: `1rem 0`,
       }}
     >
-      <h1 style={{ margin: 0, fontSize: '70px', }}>
+      <Title style={{ margin: 0, fontSize: '70px', }}>
         <Link
           to="/"
           style={{
@@ -21,9 +21,9 @@ const Header = ({ siteTitle }) => (
         >
           {siteTitle}
         </Link>
-      </h1>
-      <SmallNote>Personal Blog, Notes, Tutorials and Porfolio available to the public eye.</SmallNote>
-    </div>
+      </Title>
+      <SmallNote>Personal Blog, Notes, Tutorials and Porfolio.</SmallNote>
+    </TitleContainer>
   </header>
 )
 
