@@ -40,9 +40,6 @@ const Layout = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          <SmallNote>© {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a> </SmallNote>
           <SmallNote>If the design of this website hurts your eyes, send suggestions to <a style={{ color: '#9388A2' }} href="mailto:raizuuus.random.writings@gmail.com">this email</a>. I am a software engineer focused on the backend for a reason</SmallNote>
         </footer>
       </div>

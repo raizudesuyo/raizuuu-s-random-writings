@@ -2,7 +2,7 @@
 title: Immortalized Deeds
 written date: 2021-04-25
 last modified date: 2021-04-25
-published: false
+published: true
 tags: [Ongoing Story, Immortalized Deed]
 ---
 # Immortalized Deeds
