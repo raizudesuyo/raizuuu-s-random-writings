@@ -30,3 +30,7 @@ This page on my website shall be dedicated to each one of them, I will do my bes
 |Name|Token|Page Link|
 ---|---|---
 | "A tip of try to use less because on my writing because I use too many because." | [Link](https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/40542310856415094363189399722462681283017298973556230436217834251596484050945) | Being written | 
+
+## Update
+
+The project is dead.
