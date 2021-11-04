@@ -1,9 +1,10 @@
 ---
 title: Immortalized Deeds
+subtitle: NFT collection as a token of appreciation!
 written date: 2021-04-25
 last modified date: 2021-04-25
 published: true
-tags: [Ongoing Story, Immortalized Deed]
+tags: [NFT, Plans]
 ---
 # Immortalized Deeds
 
@@ -33,4 +34,4 @@ This page on my website shall be dedicated to each one of them, I will do my bes
 
 ## Update
 
-The project is dead.
+The project is dead. For now...

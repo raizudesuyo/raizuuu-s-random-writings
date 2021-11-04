@@ -1,9 +1,10 @@
 ---
 title: On Trying to Become A Youtuber
+subtitle: Filling a void
 written date: 2021-09-20
 last modified date: 2021-09-20
 published: true
-tags: [Self Improvement]
+tags: [Self Improvement, Plans]
 ---
 # On Trying to Become A Youtuber
 

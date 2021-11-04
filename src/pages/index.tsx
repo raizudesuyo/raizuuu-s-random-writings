@@ -1,22 +1,64 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import { loremIpsum } from "lorem-ipsum"
-
+import _ from 'lodash'
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { SubTitle, Title } from "../styled/Shared"
+import { SubNote, ArticleListContainer, ArticleListEntry} from "../styled/Components/ArticleList"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <SubTitle>Welcome to my blog!</SubTitle>
-    <p>If you got here because it is written on the resume I gave you, please don't tell anybody about my personal details. Otherwise feel free to read about anything</p>
-    <p><Link to="/why-is-this-website-is-made-using-gatsby">Why is this website written in Gatsby</Link> - It's actually made with Gatsby, it's not like I need to, I just want to!</p>
-    <p><Link to="/immortalized-deed">Immortalized Deed</Link> - NFT collection as a token of appreciation!</p>
-    <p><Link to="/on-becoming-a-youtuber">On Becoming a Youtuber</Link> - filling a void.</p>
-    <p><Link to="/year-2021">Year 2021</Link> - the wasted year.</p>
-  </Layout>
-)
+const IndexPage = () => {
+  const posts: PostQueryData = useStaticQuery(graphql`
+    query MyQuery {
+      allMdx(sort: {fields: frontmatter___last_modified_date, order: DESC}) {
+        nodes {
+          frontmatter {
+            title
+            subtitle
+            written_date,
+            tags
+          }
+          slug
+        }
+      }
+    }  
+  `);
+
+
+  console.log(posts)
+
+
+  
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <SubTitle>Welcome to my blog!</SubTitle>
+      <p>If you got here because it is written on the resume I gave you, please don't tell anybody about my personal details. Otherwise feel free to read about anything</p>
+      <>
+        { posts.allMdx.nodes.map((post) => {
+          return (
+            <ArticleListContainer>
+              <ArticleListEntry><Link to={post.slug}>{post.frontmatter.title}</Link> - {post.frontmatter.subtitle}</ArticleListEntry>
+              <SubNote>Written: {new Date(post.frontmatter.written_date).toLocaleDateString()}, Tags: { _.join(post.frontmatter.tags, ', ') }</SubNote>
+            </ArticleListContainer>
+            )
+        }) }
+      </>
+    </Layout>
+  )
+}
+
+interface PostQueryData {
+  allMdx: {
+    nodes: [{
+      frontmatter: {
+        title: string;
+        subtitle: string;
+        written_date: string;
+        tags: [string]
+      }
+      slug: string
+    }]
+  }
+}
 
 export default IndexPage

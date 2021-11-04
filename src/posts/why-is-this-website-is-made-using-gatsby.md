@@ -1,10 +1,11 @@
 ---
 title: Why is this blog made using gatsby?
+subtitle: No reason at all!
 written date: 2021-04-23
 last modified date: 2021-04-23
 published: true
 todos: rewrite, too many becauses
-tags: [Web Development, Essay, Personal Opinion]
+tags: [Web Development, Opinion]
 ---
 # Why is this blog made using Gatsby?
 
