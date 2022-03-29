@@ -6,10 +6,18 @@ export const SubNote = styled.span`
     margin-bottom: 0;
 `
 
-export const ArticleListEntry = styled.p`
+export const ArticleEntriesContainer = styled.div`
+
+`;
+
+export const ArticleEntriesContainerHeadline = styled.h2`
+    text-align: center;
+`
+
+export const ArticleEntry = styled.p`
     margin-top: 0;
 `
 
-export const ArticleListContainer = styled.div`
+export const ArticleEntryContainer = styled.div`
     margin-top: 10pt;
 `

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
+
   body {
     font-family: 'Free Pixel';
     font-size: x-large;
@@ -30,6 +31,11 @@ export const GlobalStyle = createGlobalStyle`
 
   a::link {
     color: black;
+  }
+
+  header {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 `
 

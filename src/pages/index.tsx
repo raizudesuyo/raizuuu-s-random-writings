@@ -4,7 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { SubTitle, Title } from "../styled/Shared"
-import { SubNote, ArticleListContainer, ArticleListEntry} from "../styled/Components/ArticleList"
+import { SubNote, ArticleEntryContainer, ArticleEntry, ArticleEntriesContainer, ArticleEntriesContainerHeadline } from "../styled/Components/ArticleList"
 
 const IndexPage = () => {
   const posts: PostQueryData = useStaticQuery(graphql`
@@ -23,26 +23,22 @@ const IndexPage = () => {
     }  
   `);
 
-
-  console.log(posts)
-
-
-  
   return (
     <Layout>
       <SEO title="Home" />
-      <SubTitle>Welcome to my blog!</SubTitle>
-      <p>If you got here because it is written on the resume I gave you, please don't tell anybody about my personal details. Otherwise feel free to read about anything</p>
-      <>
+      <SubTitle>Why is this here?</SubTitle>
+      <p>This is an outlet of the person whoever is posting on this site. I might or might not be meant to be read by anyone, however if you're here already, you are very welcome.</p>
+      <ArticleEntriesContainer>
+        <ArticleEntriesContainerHeadline>Posts</ArticleEntriesContainerHeadline>
         { posts.allMdx.nodes.map((post) => {
           return (
-            <ArticleListContainer>
-              <ArticleListEntry><Link to={post.slug}>{post.frontmatter.title}</Link> - {post.frontmatter.subtitle}</ArticleListEntry>
+            <ArticleEntryContainer>
+              <ArticleEntry><Link to={post.slug}>{post.frontmatter.title}</Link> - {post.frontmatter.subtitle}</ArticleEntry>
               <SubNote>Written: {new Date(post.frontmatter.written_date).toLocaleDateString()}, Tags: { _.join(post.frontmatter.tags, ', ') }</SubNote>
-            </ArticleListContainer>
+            </ArticleEntryContainer>
             )
         }) }
-      </>
+      </ArticleEntriesContainer>
     </Layout>
   )
 }
@@ -54,7 +50,8 @@ interface PostQueryData {
         title: string;
         subtitle: string;
         written_date: string;
-        tags: [string]
+        tags: [string];
+        published: boolean;
       }
       slug: string
     }]
