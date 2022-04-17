@@ -47,4 +47,4 @@ And yes, I've also delayed my certification adventures by a month because Elden 
 
 I've managed to get my first certification which I can't use. Quit a job because somebody did assy things, looked for a job and manage to get one which I think I really cannot perform in, played Elden Ring and now think I can do it. And all of my certification adventures were delayed by a month.
 
-I would say, a good first quarter. Also that new job is 2x the salary of my previous job so the can suck my d***
+I would say, a good first quarter. 8/10.
