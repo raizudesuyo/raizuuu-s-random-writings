@@ -29,6 +29,7 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,6 +50,11 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve("./src/components/layout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
+        ],  
       }
     },
     `gatsby-plugin-gatsby-cloud`,

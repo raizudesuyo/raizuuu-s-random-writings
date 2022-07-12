@@ -13,6 +13,7 @@ import GlobalFonts from '../fonts/fonts';
 import Header from "./header"
 import { GlobalStyle } from "../styled/Global";
 import { SmallNote } from "../styled/Shared";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  deckDeckGoHighlightElement();
 
   return (
     <>
