@@ -1,9 +1,9 @@
 import * as React from "react"
-import _ from 'lodash'
+import { flow, uniqBy, flatMap, uniq, capitalize, join, map, filter } from 'lodash/fp'
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { SubTitle, Title } from "../styled/Shared"
+import { SmallNote, SubTitle, Title } from "../styled/Shared"
 import { SubNote, ArticleEntryContainer, ArticleEntry, ArticleEntriesContainer, ArticleEntriesContainerHeadline } from "../styled/Components/ArticleList"
 
 const IndexPage = () => {
@@ -33,7 +33,16 @@ const IndexPage = () => {
     }
   `)
 
-  const mainTypes = _.uniqBy(files.allFile.nodes, 'relativeDirectory').map((file) => file.relativeDirectory);
+  const mainTypes = flow(
+
+    uniqBy<AllFileDataNode>('relativeDirectory'),
+    map((file) => file.relativeDirectory)
+  )(files.allFile.nodes)
+
+  const allTags = flow(
+    flatMap<AllFileDataNode, string>((file) => file.childMdx.frontmatter.tags),
+    uniq
+  )(files.allFile.nodes)
 
   return (
     <Layout>
@@ -44,49 +53,57 @@ const IndexPage = () => {
         { 
           mainTypes.map((postType) => 
             (<>
-              <ArticleEntriesContainerHeadline>{_.capitalize(postType)}</ArticleEntriesContainerHeadline>
+              <ArticleEntriesContainerHeadline>{capitalize(postType)}</ArticleEntriesContainerHeadline>
               {
-                _.filter(files.allFile.nodes, (node) => node.relativeDirectory === postType).map((post) => {
-                  const { slug } = post.childMdx;
-                  const { written_date, title, subtitle, tags } = post.childMdx.frontmatter;
-                  const tagString = _.join(tags, ', ');
-
-                  return (
-                    <ArticleEntryContainer>
-                      <ArticleEntry><Link to={slug}>{title}</Link> - { subtitle }</ArticleEntry>
-                      <SubNote>Written: {new Date(written_date).toLocaleDateString()}, Tags: { tagString }</SubNote>
-                    </ArticleEntryContainer>
-                  )
-                })
+                flow(
+                  filter<AllFileDataNode>((node) => node.relativeDirectory === postType),
+                  map((post) => {
+                    const { slug } = post.childMdx;
+                    const { written_date, title, subtitle, tags } = post.childMdx.frontmatter;
+                    const tagString = join(', ')(tags);
+  
+                    return (
+                      <ArticleEntryContainer>
+                        <ArticleEntry><Link to={slug}>{title}</Link> - { subtitle }</ArticleEntry>
+                        <SubNote>Written: {new Date(written_date).toLocaleDateString()}, Tags: { tagString }</SubNote>
+                      </ArticleEntryContainer>
+                    )
+                  }
+                ))(files.allFile.nodes)
               }
             </>)
           )
         }
       </ArticleEntriesContainer>
+      <SubTitle>By Tags</SubTitle>
+      <p>{join(', ')(allTags)}</p>
     </Layout>
   )
 }
 
 interface AllFileData {
   allFile: {
-    nodes: [{
-      id: string,
-      relativePath: string
-      childMdx: {
-        id: string,
-        slug: string,
-        frontmatter: {
-          title: string,
-          subtitle: string,
-          written_date: string,
-          tags: [string]
-        }
-      },
-      ext: string
-      relativeDirectory: string
-    }],
+    nodes: AllFileDataNode[],
     totalCount: number
   }
 }
+
+interface AllFileDataNode {
+  id: string,
+  relativePath: string
+  childMdx: {
+    id: string,
+    slug: string,
+    frontmatter: {
+      title: string,
+      subtitle: string,
+      written_date: string,
+      tags: string[]
+    }
+  },
+  ext: string
+  relativeDirectory: string
+}
+
 
 export default IndexPage

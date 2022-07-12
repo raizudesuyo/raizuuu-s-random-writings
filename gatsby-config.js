@@ -48,7 +48,7 @@ module.exports = {
         extensions: ['.md', '.mdx'],
         defaultLayouts: {
           default: require.resolve("./src/components/layout.tsx"),
-        }
+        },
       }
     },
     `gatsby-plugin-gatsby-cloud`,

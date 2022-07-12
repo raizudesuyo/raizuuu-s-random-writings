@@ -12,7 +12,7 @@ import GlobalFonts from '../fonts/fonts';
 
 import Header from "./header"
 import { GlobalStyle } from "../styled/Global";
-import { SmallNote, SubTitle } from "../styled/Shared";
+import { SmallNote } from "../styled/Shared";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
