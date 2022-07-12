@@ -115,18 +115,18 @@ Coming from the world of LINQ I find the above really unpleasant (and importing 
 ```csharp
 var translations = new Dictionary<string, string>
 {
-    {"cat", "chat"},
-    {"dog", "chien"},
-    {"fish", "poisson"},
-    {"bird", "oiseau"}
+  {"cat", "chat"},
+  {"dog", "chien"},
+  {"fish", "poisson"},
+  {"bird", "oiseau"}
 };
 
 // Find translations for English words containing the letter "a",
 // sorted by length and displayed in uppercase
 IEnumerable<string> query = translations
-	.Where(t => t.Key.Contains("a"))
-	.OrderBy(t => t.Value.Length)
-	.Select(t => t.Value.ToUpper());
+  .Where(t => t.Key.Contains("a"))
+  .OrderBy(t => t.Value.Length)
+  .Select(t => t.Value.ToUpper());
 ```
 
 Notice that the translations object methods also returns itself that lets it to be manipulated by chaining methods together (This is called a [Fluent Interface](https://en.wikipedia.org/wiki/Fluent_interface)). The same coudn't be done on Lodash (on my example at least)
