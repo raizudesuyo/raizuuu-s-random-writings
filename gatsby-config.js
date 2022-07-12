@@ -16,6 +16,28 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-twitter-cards`,
+            options: {
+              title: 'raizuuu\'s random writings', // website title
+              separator: '|', // default
+              author: 'raizuuu',
+              fontColor: '#000000', // defaults to white (#ffffff)
+              backround: '#FFC247',
+              titleFontSize: 96, // default
+              subtitleFontSize: 60, // default
+              fontStyle: 'monospace', // default
+              fontFile: require.resolve('./src/fonts/FreePixel.ttf'), // will override fontStyle - path to custom TTF font
+              useFrontmatterSlug: false // default, if true it will use the slug defined in the post frontmatter
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
