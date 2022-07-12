@@ -112,7 +112,7 @@ const mappedCollection = /* However you want to map it */
 
 Coming from the world of LINQ I find the above really unpleasant (and importing the whole lodash library is not really a very good thing to do). Consider the following code I copy pasted on [Wikipedia](https://en.wikipedia.org/wiki/Fluent_interface#C#)
 
-```C#
+```csharp
 var translations = new Dictionary<string, string>
 {
     {"cat", "chat"},
@@ -133,7 +133,7 @@ Notice that the translations object methods also returns itself that lets it to 
 
 There is a way to write lodash to make it a little bit more similar to LinQ
 
-```Typescript
+```typescript
 // Needed imports
 import flow from 'lodash/fp/flow'
 import filter from 'lodash/fp/filter'
