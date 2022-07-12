@@ -14,7 +14,6 @@ import Header from "./header"
 import { GlobalStyle } from "../styled/Global";
 import { SmallNote } from "../styled/Shared";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import AdsenseBanner from "./AdsenseBanner/AdsenseBanner";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,21 +25,10 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
-  React.useEffect(() => {
-    try {
-      const adsbygoogle = window.adsbygoogle || []
-      adsbygoogle.push({})
-    } catch (e) {
-      console.error(e)
-    }
-  }, [])
-
   deckDeckGoHighlightElement();
 
   return (
     <>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <GlobalFonts />
       <GlobalStyle />
       
@@ -64,9 +52,6 @@ const Layout = ({ children }) => {
         <footer>
           <SmallNote><a href="/">Back to Main Page</a></SmallNote>
         </footer>
-        <AdsenseBanner slot="bottom" style={{
-          display: 'inline-block';
-        }}/>
       </div>
     </>
   )
